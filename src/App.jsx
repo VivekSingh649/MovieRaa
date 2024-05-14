@@ -7,6 +7,7 @@ import DetailsPage from "./pages/DetailsPage";
 import Header from "./components/Header";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import { API_KEY } from "./config/constant";
 
 function App() {
   const loadingBarRef = useRef(null);
