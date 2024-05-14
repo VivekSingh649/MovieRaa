@@ -9,18 +9,20 @@ function DetailsPage() {
   const { id } = useParams();
   const [movie, setMovie] = useState({ genres: [], spoken_languages: [] });
 
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      try {
-        const res = await fetch(`${BASE_URL}/${id}?${API_KEY}`);
+  const fetchMovieDetails = async (apiUrl) => {
+    try {
+      const res = await fetch(apiUrl);
+      if (res.status === 200) {
         const data = await res.json();
         setMovie(data);
-      } catch (error) {
-        console.error("Error fetching movie details:", error);
       }
-    };
+    } catch (error) {
+      console.error("Error fetching movie details:", error);
+    }
+  };
 
-    fetchMovieDetails();
+  useEffect(() => {
+    fetchMovieDetails(`${BASE_URL}/${id}?${API_KEY}`);
   }, [id]);
 
   return (
