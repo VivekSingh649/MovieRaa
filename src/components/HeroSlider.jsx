@@ -106,7 +106,7 @@ export default function HeroSlider() {
                         year: "numeric",
                       })}
                     </h4>
-                    <button className="absolute md:relative bottom-[-22px] md:bottom-0 right-4 md:right-0 md:flex items-center gap-2 mt-8">
+                    <button className="absolute md:relative bottom-[0] md:bottom-0 right-4 md:right-0 md:flex items-center gap-2 mt-8 z-40">
                       <div className="inline-flex justify-center items-center w-12 h-12 text-white bg-primary-600 rounded-full">
                         <i className="bi bi-play-fill text-3xl"></i>
                       </div>

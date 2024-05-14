@@ -139,15 +139,13 @@ function MovieCard({ sectionTitle, queryFor, movieId }) {
           {sectionTitle}
         </h2>
         <Swiper
+          slidesPerView={2}
           spaceBetween={15}
           pagination={{
             clickable: true,
             dynamicBullets: true,
           }}
           breakpoints={{
-            320: {
-              slidesPerView: 1,
-            },
             480: {
               slidesPerView: 2,
             },

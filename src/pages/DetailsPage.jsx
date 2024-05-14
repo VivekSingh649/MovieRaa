@@ -28,7 +28,7 @@ function DetailsPage() {
   return (
     <div className="container">
       <Thumbnail thumbnail={`${IMAGE_URL_ORIG}${movie.backdrop_path}`} />
-      <div className="w-full flex flex-wrap mt-20">
+      <div className="w-full flex flex-wrap mt-8 lg:mt-16">
         <div className="hidden lg:block lg:w-[40%] lg:pr-4">
           <div
             className="rounded-lg min-h-[100%]"

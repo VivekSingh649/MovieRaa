@@ -9,7 +9,8 @@ function SearchBar() {
   const [movie, setMovies] = useState([]);
 
   const getMovies = async (apiUrl) => {
-    setIsloading(true);
+    !query ? setIsloading(false) : setIsloading(true);
+
     try {
       const res = await fetch(apiUrl);
       if (res.status === 200) {
