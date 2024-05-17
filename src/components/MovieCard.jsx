@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { API_KEY, BASE_URL, IMAGE_URL } from "../config/constant";
 import { Pagination } from "swiper/modules";
 
-function MovieCard({ sectionTitle, queryFor, movieId }) {
+function MovieCard({ sectionTitle, queryFor, movieId, category }) {
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,12 +28,16 @@ function MovieCard({ sectionTitle, queryFor, movieId }) {
   };
 
   useEffect(() => {
-    if (!movieId) {
-      showMovies(`${BASE_URL}/${queryFor}?${API_KEY}`);
-    } else {
+    if (movieId) {
       showMovies(`${BASE_URL}/${movieId}/${queryFor}?${API_KEY}`);
+    } else if (category) {
+      showMovies(
+        `https://api.themoviedb.org/3/discover/movie?${API_KEY}&with_genres=${category}&language=en-US&sort_by=popularity.desc&page=1`
+      );
+    } else {
+      showMovies(`${BASE_URL}/${queryFor}?${API_KEY}`);
     }
-  }, []);
+  }, [queryFor, movieId, category]);
 
   const Skeleton = () => {
     return (

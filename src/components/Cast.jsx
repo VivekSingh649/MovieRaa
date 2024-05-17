@@ -29,14 +29,12 @@ function Cast({ movieId }) {
     <>
       <Swiper
         spaceBetween={15}
+        slidesPerView={3.5}
         pagination={{
           clickable: true,
           dynamicBullets: true,
         }}
         breakpoints={{
-          320: {
-            slidesPerView: 2,
-          },
           480: {
             slidesPerView: 3,
           },
